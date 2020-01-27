@@ -8,13 +8,16 @@ module.exports = {
             nome: req.body.nome,
             sobrenome: req.body.sobrenome
         }
-        new Form(Cadastro).save().then(console.log('Salvo no DB'))
+        new Form(Cadastro).save().then(()=>{
+            console.log('Salvo no DB')
+            console.log(req.body)
+    })
     },
 
     async ShowAll(req,res){
-        console.log('Rota acessada com sucesso')
-        // const all = await Form.find()
-        // res.json(all)
+        const all = await Form.find()
+        res.json(all)
+        console.log(all)
 
     }
 }

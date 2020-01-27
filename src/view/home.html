@@ -8,17 +8,19 @@
     <title>Listagem de Cadastros</title>
 </head>
 <body>
-    <div id="lista" onload="return list()">
-        <input type="button" value="Não Clique" onclick="return list()">
+    <div id="lista">
+       
     </div>
+    <button onclick="list()">Clique</button>
 
     <script>
         function list(){
-        console.log('List acionada')
         $.ajax({
             url: "/show",
             method: "post",
-        }).done(dados=>console.log(dados))
+        }).done(dados=>{
+            $('#lista').html('Algumam coisa')
+        })
         return false
         }
 </script>
