@@ -26,10 +26,10 @@
             $.ajax({
             url: "/user",
             method: "post",
-            data: {nome: nome, sobrenome:sobrenome}
+            data: {nome, sobrenome}
         }
         ).done(retorno=>{console.log(retorno)})
-        console.log(data)
+        return false
     }
     </script>
 </body>
