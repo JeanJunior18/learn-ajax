@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Treinamento Ajax</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body id="b">
+    <div id="teste">
+
+    <form onsubmit="return teste()" method="post">
+        <label for="nome">Nome: </label>
+        <input type="text" name="nome" id="nome">
+        
+        <label for="sobrenome">Sobrenome: </label>
+        <input type="text" name="sobrenome" id="sobrenome">
+
+        <input type="submit" value="Enviar">
+    </form> 
+    <script>
+        function teste(){
+            var nome = $('#nome').val()
+            var sobrenome = $('#sobrenome').val()
+            $.ajax({
+            url: "/user",
+            method: "post",
+            data: {nome: nome, sobrenome:sobrenome}
+        }
+        ).done(retorno=>{console.log(retorno)})
+        console.log(data)
+    }
+    </script>
+</body>
+</html>
