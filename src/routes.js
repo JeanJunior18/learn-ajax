@@ -6,9 +6,8 @@ const router = express.Router();
 router.get('/',(req,res)=>{
     res.sendFile(path.join(__dirname+'/view/index.html'));
 });
-router.post('/user',(req,res)=>{
-    console.log('Formulario recebido')
-    console.log(req.body)
-})
+
+const Form = require('./controller/FormController')
+router.post('/user', Form.cadastro)
 
 module.exports = router;
