@@ -13,24 +13,13 @@
     <form onsubmit="return teste()" method="post">
         <label for="nome">Nome: </label>
         <input type="text" name="nome" id="nome">
-        
+        <br>
         <label for="sobrenome">Sobrenome: </label>
         <input type="text" name="sobrenome" id="sobrenome">
-
+        <br>
         <input type="submit" value="Enviar">
     </form> 
-    <script>
-        function teste(){
-            var nome = $('#nome').val()
-            var sobrenome = $('#sobrenome').val()
-            $.ajax({
-            url: "/user",
-            method: "post",
-            data: {nome, sobrenome}
-        }
-        ).done(retorno=>{console.log(retorno)})
-        return false
-    }
-    </script>
+    
+    <script src="index.js"></script>
 </body>
 </html>
