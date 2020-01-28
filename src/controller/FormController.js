@@ -17,7 +17,5 @@ module.exports = {
     async ShowAll(req,res){
         const all = await Form.find()
         res.json(all)
-        console.log(all)
-
     }
 }
